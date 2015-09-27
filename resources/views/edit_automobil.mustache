@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>ŠKODA AUTO </title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<style>
+	img {
+		width:100%;
+		height: 350px
+	}
+	.podaci{
+		margin-left:25%;
+		height:400px;
+		margin-right: 25%;
+	}
+	#meni{
+		height: 40px;
+	}
+	.footer{ 
+	margin-left:15%;
+    display:block;
+	width: 960px;
+	height: 20px;
+	padding-top: 60px;
+	text-align: center;
+	background: transparent;
+	text-shadow: 1px 1px #18330B;
+	color: #000;
+	font-weight: bold;
+	}
+	
+</style>
+<body>
+
+<div class="slika">
+		<img src="http://amandajbush.com/wp-content/uploads/2014/01/aulani-weights-at-fitness-center-2050x848.jpg" >
+</div>
+<div class="podaci">
+<div class="pure-menu pure-menu-horizontal" id="meni">
+	<ul class="pure-menu-list">
+		<li class="pure-menu-item"><a href="/" class="pure-menu-link">Škoda auto</a></li>
+		<li class="pure-menu-item"><a href="/automobili" class="pure-menu-link">Automobili</a></li>
+        <li class="pure-menu-item"><a href="/tipautaa" class="pure-menu-link">Tip auta</a></li>
+        <li class="pure-menu-item"><a href="/opreme" class="pure-menu-link">Opreme</a></li>
+        <li class="pure-menu-item"><a href="/ugovori" class="pure-menu-link">Ugovori</a></li>
+	</ul>
+	</div>
+
+<div class="container">
+    <div class="col-md-4">
+        <h3>Izmena automobila:</h3>
+        <form action="/automobili/{{automobil.regbrojauta}}/update" method="post" class="pure-form pure-form-aligned">
+		<fieldset>
+            <div class="pure-control-group">
+                <label for="regbrojauta">Reg. br. automobila:</label>
+                <input type="number" class="form-control" name="regbrojauta" value="{{automobil.regbrojauta}}"/>
+            </div>
+            <div class="pure-control-group">
+                <label for="godproizv">Godina proizvodnje:</label>
+                <input type="date" class="form-control" name="godproizv" value="{{automobil.godproizv}}"/>
+            </div>
+            <div class="pure-control-group">
+                <label for="tipauta_id">Izaberite tip automobila:</label>
+                <select name="tipauta_id" class="form-control" id="tipauta_id" value="{{automobil.tipauta_id}}">
+                   {{#tipautaa}}
+                       <option value="{{tipautaid}}">{{imeauta}}</option>
+                   {{/tipautaa}}
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="oprema_id">Izaberite opremu:</label>
+                <select name="oprema_id" class="form-control" id="oprema_id" value="{{automobil.oprema_id}}">
+                    {{#opreme}}
+                        <option value="{{opremaid}}">{{imeopreme}}</option>
+                    {{/opreme}}
+                </select>
+            </div>
+			<div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Zapamti izmene</button>
+            <a href="/automobili">Nazad</a></div>
+            
+		</fieldset>
+        </form>
+    </div>
+</div>
+</div>
+<div class="footer">
+	ŠKODA AUTO
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+	<head>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+	$("#slideshow > div:gt(0)").hide();
+	setInterval(function() { 
+  	$('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+	</script>
+	<title>SKODA AUTO</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	</head>
+	<style>
+	#slideshow {      
+    position: relative; 
+    width: 100%; 
+    height: 570px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	}
+	#slideshow > div { 
+    position: absolute;      
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+	}
+	img {
+		width:100%;
+		height: 570px;
+	}
+	.datatab{
+		margin-left:25%;
+		margin-right: 25%;
+	}
+	#meni{
+		height: 40px;
+	}
+	.footer{ 
+	text-shadow: 1px 1px #18330B;
+	margin-left:14%;
+	width: 940px;
+	height: 23px;
+	padding-top: 60px;
+	text-align: center;
+	background: transparent;
+	color: #000;
+	display:block;
+	font-weight: bold;
+	}
+	
+	</style>
+<body>	
+	<div id="slideshow">
+   <div>
+     <img src="http://www.carwallpapers.cc/wp/skoda/rapid/2012/Skoda-Rapid-2012-1600x900-003.jpg">
+   </div>
+   <div>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/%C5%A0koda_Superb_II_2013_(back).JPG">
+   </div>
+   <div>
+     <img src="http://4.bp.blogspot.com/-FVdBDM0caEk/TuXEntbmhII/AAAAAAAAFW4/zDXTWbHiMjc/s1600/2013_Skoda-Citigo_car-desktop-wallpaper-2.jpg">
+   </div>
+</div>
+	<div class="datatab">
+    <div class="pure-menu pure-menu-horizontal" id="meni">
+	<ul class="pure-menu-list">
+		<li class="pure-menu-item"><a href="/" class="pure-menu-link">Skoda auto</a></li>
+		<li class="pure-menu-item"><a href="/automobili" class="pure-menu-link">Automobili</a></li>
+        <li class="pure-menu-item"><a href="/tipautaa" class="pure-menu-link">Tip auta</a></li>
+        <li class="pure-menu-item"><a href="/opreme" class="pure-menu-link">Opreme</a></li>
+        <li class="pure-menu-item"><a href="/ugovori" class="pure-menu-link">Ugovori</a></li>
+	</ul>
+	</div>
+            <h2>Automobili</h2>
+            <a href="/automobili/new"><button class="pure-button">Unesi automobil</button></a>
+            
+            <table class="pure-table pure-table-bordered">
+			<thead>
+                <tr>
+                    <th>Reg. br. automobila</th>
+                    <th>Godina proizvodnje</th>
+                    <th>Oprema</th>
+                    <th>Tip automobila</th>
+                    <th>Izmena</th>
+                    <th>Brisanje</th>
+				</tr>
+			</thead>
+			<tbody>
+                    {{#automobili}}
+                        <tr>
+                        	<td>{{regbrojauta}}</td>
+                            <td>{{godproizv}}</td>    
+                            <td>{{imeopreme}}</td>
+                            <td>{{imeauta}}</td>
+                            <td><a href="/automobili/{{regbrojauta}}/edit">Izmeni automobil</a></td>
+                            <td><a href="/automobili/{{regbrojauta}}/delete">Obrisi automobil</a></td>
+                        </tr>
+                    {{/automobili}}
+            </tbody>
+            </table>
+        </div>
+	
+	<div class="footer">
+	SKODA AUTO
+</div>
+    </body>
+</html>

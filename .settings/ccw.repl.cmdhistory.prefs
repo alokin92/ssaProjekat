@@ -1,0 +1,2 @@
+cmdhistory=["(clojure.string/join \\" \= \\" 3)" "(clojure.string/join \\"\=\\" [3])" "(join \\"\=\\" 3)" "(clojure.string/join [\\"\=\\", 3])"]
+eclipse.preferences.version=1
